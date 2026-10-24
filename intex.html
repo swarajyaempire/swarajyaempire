@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swarajya Empire | एकजूट समाजाची, समृद्ध महाराष्ट्राची</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3efe4; --surface:#fbf9f2; --ink:#1b2a26; --muted:#58645f; --line:#d9d2bf;
+  --deep:#16302a; --on-deep:#f3efe4; --on-deep-muted:#b9c7c0;
+  --bhagwa:#e8761a; --bhagwa-ink:#9a4a08; --ok:#2d7a4f;
+  --serif:"Tiro Devanagari Marathi","Noto Serif Devanagari",Georgia,serif;
+  --sans:"Noto Sans Devanagari","Nirmala UI",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a17; --surface:#16251f; --ink:#ece8dc; --muted:#a3b0aa; --line:#2b3d36;
+    --deep:#0a1311; --on-deep:#ece8dc; --on-deep-muted:#a3b0aa; --bhagwa-ink:#f0a15c; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a17; --surface:#16251f; --ink:#ece8dc; --muted:#a3b0aa; --line:#2b3d36;
+  --deep:#0a1311; --on-deep:#ece8dc; --on-deep-muted:#a3b0aa; --bhagwa-ink:#f0a15c; color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.8;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--bhagwa);outline-offset:3px}
+.wrap{width:min(1080px,92%);margin:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.3}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:20}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:19;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.pennant{width:26px;height:36px;background:var(--bhagwa);clip-path:polygon(0 0,100% 0,62% 50%,100% 100%,0 100%)}
+.logo b{font-family:var(--serif);font-weight:400;font-size:21px;display:block;line-height:1.2}
+.logo small{color:var(--muted);font-size:12px}
+.links{display:flex;gap:22px;align-items:center;font-size:15px}
+.links a{text-decoration:none}
+.links a:hover{color:var(--bhagwa-ink)}
+.btn{display:inline-block;background:var(--bhagwa);color:#1b1206;border:0;border-radius:6px;padding:12px 22px;font-weight:700;cursor:pointer;text-decoration:none;font-size:16px}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.links .btn{padding:8px 16px;font-size:14px}
+
+.hero{padding:84px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,7vw,78px);line-height:1.2;letter-spacing:-.5px}
+.hero h1 em{display:block;font-style:normal;color:var(--bhagwa-ink)}
+.hero p{margin:22px 0 30px;max-width:34em;color:var(--muted);font-size:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.flag{position:relative;height:340px;display:flex;justify-content:center}
+.flag .pole{width:6px;background:var(--ink);border-radius:3px;margin-right:0}
+.flag .cloth{width:230px;height:190px;background:var(--bhagwa);clip-path:polygon(0 0,100% 0,70% 50%,100% 100%,0 100%);transform-origin:left center;animation:wave 1.6s ease-out 1 both}
+.flag .motto{position:absolute;bottom:0;left:0;right:0;text-align:center;font-family:var(--serif);font-size:19px;color:var(--ink)}
+@keyframes wave{from{transform:scaleX(.2);opacity:0}to{transform:scaleX(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.flag .cloth{animation:none}html{scroll-behavior:auto}}
+
+section{padding:76px 0;border-top:1px solid var(--line)}
+.head{max-width:680px;margin-bottom:38px}
+.head h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
+.head p{color:var(--muted)}
+
+.areas{list-style:none;border-top:1px solid var(--ink)}
+.areas li{display:grid;grid-template-columns:56px 260px 1fr;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.areas .ic{font-size:28px}
+.areas h3{font-size:22px}
+.areas p{color:var(--muted);font-size:16px}
+
+.idea{background:var(--deep);color:var(--on-deep);border-top:0}
+.idea-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
+.rupee{font-family:var(--serif);font-size:clamp(80px,14vw,150px);line-height:1;color:var(--bhagwa)}
+.idea h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}
+.idea p{color:var(--on-deep-muted)}
+.ticks{list-style:none;margin:20px 0 0}
+.ticks li{padding:6px 0 6px 28px;position:relative}
+.ticks li::before{content:"✓";position:absolute;left:0;color:var(--bhagwa);font-weight:700}
+
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--bhagwa)}
+.steps li{counter-increment:s;padding:22px 18px 0 0}
+.steps li::before{content:"टप्पा " counter(s);color:var(--bhagwa-ink);font-weight:700;font-size:14px}
+.steps h3{font-size:19px;margin:6px 0}
+.steps p{color:var(--muted);font-size:15px;line-height:1.7}
+
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.trust h3{font-size:21px;margin-bottom:6px;padding-top:14px;border-top:2px solid var(--ink)}
+.trust p{color:var(--muted);font-size:16px}
+.notice{margin-top:40px;padding:18px 22px;background:var(--surface);border-left:5px solid var(--bhagwa);font-size:16px}
+
+.join-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.join-grid h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.join-grid>div>p{color:var(--muted)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px}
+.f{margin-bottom:16px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:90px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--muted);margin:6px 0 18px}
+.consent input{width:auto;margin-top:7px}
+form .btn{width:100%}
+#msg{margin-top:14px;font-size:14px;color:var(--muted)}
+#msg.done{color:var(--ok);font-weight:600}
+
+footer{background:var(--deep);color:var(--on-deep);padding:44px 0 36px}
+footer p,footer small{color:var(--on-deep-muted);font-size:14px}
+.fg{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.fg p{max-width:420px;margin-top:6px}
+footer hr{border:0;border-top:1px solid #ffffff22;margin:24px 0 14px}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about h3{font-size:24px;margin-bottom:10px}
+.about p{color:var(--muted)}
+.mission{list-style:none;margin-top:6px}
+.mission li{padding:12px 0;border-bottom:1px solid var(--line);font-size:16px}
+.mission b{display:block;font-family:var(--serif);font-weight:400;font-size:18px}
+.mission span{color:var(--muted)}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:48px}
+.values h3{font-size:20px;padding-top:12px;border-top:2px solid var(--bhagwa);margin-bottom:4px}
+.values p{font-size:15px;color:var(--muted);line-height:1.7}
+.concept{margin-top:52px;padding:34px;background:var(--surface);border-left:6px solid var(--bhagwa)}
+.concept q{display:block;font-family:var(--serif);font-size:clamp(22px,3.4vw,32px);line-height:1.45;quotes:none;margin-bottom:12px}
+.concept p{color:var(--muted);max-width:46em}
+.sankalp{margin-top:20px;font-family:var(--serif);color:var(--bhagwa-ink);font-size:20px}
+.hint{font-size:13px;color:var(--muted);font-weight:400;margin-top:5px}
+
+/* ===== आराखडा + सर्वेक्षण (नवीन) ===== */
+.calc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px}
+.calc input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--bhagwa);margin:14px 0 8px;height:28px}
+.calc .out{font-size:18px}
+.calc .amt{font-family:var(--serif);font-size:clamp(40px,8vw,68px);color:var(--bhagwa-ink);line-height:1.15}
+.plan-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;margin-top:44px;align-items:start}
+.plan-grid h3{font-size:22px;margin-bottom:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:16px}
+.tbl th,.tbl td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:left}
+.tbl th{border-bottom:1.5px solid var(--ink);font-weight:600}
+.tbl td:last-child,.tbl th:last-child{text-align:right;white-space:nowrap}
+.tbl tr.tot td{font-weight:700;border-bottom:0;border-top:1.5px solid var(--ink)}
+.al{list-style:none}
+.al li{padding:9px 0;border-bottom:1px solid var(--line)}
+.al li div{display:flex;justify-content:space-between;gap:12px;font-size:16px}
+.al .bar,.goalbar{height:7px;background:var(--line);border-radius:4px;margin-top:6px;overflow:hidden}
+.al .bar i{display:block;height:100%;background:var(--ok)}
+.goalbar i{display:block;height:100%;background:var(--bhagwa);width:0;transition:width .6s}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 10px}
+.stat{background:var(--deep);color:var(--on-deep);border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.5}
+.stat strong{display:block;font-family:var(--serif);font-weight:400;font-size:32px;color:var(--bhagwa);line-height:1.2}
+.goal-note{font-size:14px;color:var(--muted);margin-bottom:22px}
+fieldset.opin{border:0;margin:4px 0 16px}
+fieldset.opin legend{font-weight:600;font-size:15px;margin-bottom:6px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:6px;margin-bottom:8px;cursor:pointer;background:var(--bg)}
+.chk input{width:18px;height:18px;margin-top:6px;flex:none;accent-color:var(--bhagwa)}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+#msg.err{color:#c0392b;font-weight:600}
+@media(max-width:860px){.plan-grid{grid-template-columns:1fr;gap:32px}}
+
+/* ===== अष्टप्रधान मंडळ ===== */
+.posts{display:grid;grid-template-columns:repeat(2,1fr);gap:30px 44px}
+.post{border-top:2px solid var(--bhagwa);padding-top:14px}
+.post h3{font-size:23px;margin-bottom:4px}
+.post h3 span{display:block;font-family:var(--sans);font-size:15px;color:var(--bhagwa-ink);font-weight:600;margin-top:2px}
+.post .duty{font-size:15px;margin:8px 0 6px}
+.post ul{list-style:none;margin:0}
+.post li{position:relative;padding:3px 0 3px 18px;font-size:15px;color:var(--muted);line-height:1.65}
+.post li::before{content:"";position:absolute;left:2px;top:.85em;width:6px;height:6px;background:var(--bhagwa);border-radius:50%}
+.post .pnote{font-size:14px;font-style:italic;color:var(--muted);margin-top:8px;padding-left:12px;border-left:3px solid var(--line)}
+.mh{font-size:26px;margin:56px 0 14px}
+.method{margin-left:1.4em;max-width:46em}
+.method li{padding:3px 0;color:var(--muted)}
+@media(max-width:860px){.posts{grid-template-columns:1fr}}
+
+/* ===== राजेशाही / ऐतिहासिक थीम (अधिक्रमण) ===== */
+:root{--bg:#f7f0e0;--surface:#fffaf0;--ink:#2a1215;--muted:#5e4a46;--line:#dccfae;--deep:#3d0d12;--on-deep:#f7ecd2;--on-deep-muted:#d8c4a0;--bhagwa-ink:#8a3a05;--gold:#c8962e;--gold-l:#ecc972}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0c0e;--surface:#251315;--ink:#f1e6cf;--muted:#c9b39b;--line:#4b2b2d;--deep:#110607;--on-deep:#f1e6cf;--on-deep-muted:#cdb89a;--bhagwa-ink:#f0a15c}}
+:root[data-theme="dark"]{--bg:#1a0c0e;--surface:#251315;--ink:#f1e6cf;--muted:#c9b39b;--line:#4b2b2d;--deep:#110607;--on-deep:#f1e6cf;--on-deep-muted:#cdb89a;--bhagwa-ink:#f0a15c}
+body::before{background:var(--deep)}
+header{background:var(--deep);border-bottom:3px double var(--gold)}
+.logo,.links a:not(.btn){color:var(--on-deep)}
+.logo small{color:var(--on-deep-muted)}
+.links a:not(.btn):hover{color:var(--gold-l)}
+.btn{border:1px solid var(--gold);box-shadow:0 2px 0 var(--gold)}
+.btn.ghost{box-shadow:none}
+section{border-top:4px double var(--line)}
+.head h2::after{content:"";display:block;width:90px;height:3px;margin-top:12px;background:var(--gold)}
+.head{position:relative}
+.hero{background:var(--deep);color:var(--on-deep);background-image:radial-gradient(circle at 85% 20%,#5a1a20 0,transparent 55%)}
+.hero h1{color:var(--on-deep)}
+.hero h1 em{color:var(--gold-l)}
+.hero p{color:var(--on-deep-muted)}
+.hero .btn.ghost{color:var(--on-deep);border-color:var(--gold)}
+.portrait{margin:0 auto;width:min(310px,82%);text-align:center}
+.portrait .frame{padding:10px;border:2px solid var(--gold);outline:1px solid var(--gold);outline-offset:7px;border-radius:155px 155px 6px 6px;background:#2a080c;overflow:hidden}
+.portrait img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:145px 145px 2px 2px}
+.portrait .flag{height:340px}
+.portrait .flag .pole{background:var(--gold)}
+.portrait .flag .motto{color:var(--gold-l);font-size:16px}
+.portrait figcaption{margin-top:22px;font-family:var(--serif);font-size:22px;color:var(--gold-l)}
+.portrait figcaption small{display:block;font-family:var(--sans);font-size:13px;color:var(--on-deep-muted);margin-top:2px}
+.mudra{background:#2a080c;color:var(--on-deep);text-align:center;padding:34px 16px;border-top:3px double var(--gold);border-bottom:3px double var(--gold)}
+.mudra small{display:block;color:var(--gold-l);font-size:14px;letter-spacing:.5px;margin-bottom:8px}
+.mudra q{display:block;quotes:none;font-family:var(--serif);font-size:clamp(20px,3.2vw,30px);line-height:1.6;color:var(--gold-l);max-width:30em;margin:auto}
+.mudra p{max-width:44em;margin:12px auto 0;font-size:15px;color:var(--on-deep-muted)}
+.concept,.notice{border-left-color:var(--gold)}
+.post,.values h3,.steps{border-color:var(--gold)}
+.steps li::before{color:var(--bhagwa-ink)}
+.trust h3{border-top:2px solid var(--gold)}
+.areas{border-top-color:var(--gold)}
+.calc,form{border-color:var(--gold)}
+.rupee{color:var(--gold-l)}
+@media(max-width:860px){.portrait .flag{height:240px}}
+@media(max-width:860px){
+  .about-grid{grid-template-columns:1fr;gap:32px}.values{grid-template-columns:1fr 1fr}
+  .links a:not(.btn){display:none}
+  .hero-grid,.idea-grid,.join-grid{grid-template-columns:1fr;gap:36px}
+  .flag{height:240px}.flag .cloth{width:170px;height:140px}
+  .areas li{grid-template-columns:44px 1fr;gap:4px 14px}
+  .areas p{grid-column:2}
+  .steps{grid-template-columns:1fr 1fr;row-gap:16px}
+  .trust{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .steps,.two{grid-template-columns:1fr}
+  section{padding:56px 0}.hero{padding:48px 0}
+  form{padding:20px}
+}
+
+/* ===== प्रश्नोत्तरे ===== */
+.faq{max-width:760px;border-top:2px solid var(--gold)}
+.faq details{border-bottom:1px solid var(--line);padding:2px 0}
+.faq summary{cursor:pointer;padding:16px 28px 16px 0;font-family:var(--serif);font-size:20px;line-height:1.5;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:26px;color:var(--bhagwa-ink)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{color:var(--muted);padding:0 0 18px;max-width:42em}
+
+/* ===== प्रशासन स्तर + पदाधिकारी अर्ज ===== */
+.levels{list-style:none;counter-reset:lv;display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px;border-top:3px solid var(--gold);padding-top:6px}
+.levels li{counter-increment:lv;padding-top:16px}
+.levels li::before{content:"स्तर " counter(lv);color:var(--bhagwa-ink);font-weight:700;font-size:14px}
+.levels h3{font-size:21px;margin:4px 0 8px}
+.levels p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:6px}
+.levels b{color:var(--ink)}
+#apply form{max-width:820px}
+#amsg{margin-top:14px;font-size:14px;color:var(--muted)}
+#amsg.done{color:var(--ok);font-weight:600}
+#amsg.err{color:#c0392b;font-weight:600}
+@media(max-width:860px){.levels{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.levels{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#home" aria-label="Swarajya Empire मुख्यपृष्ठ">
+        <span class="pennant" aria-hidden="true"></span>
+        <span><b>Swarajya Empire</b><small>लोकसहभागातून प्रगती</small></span>
+      </a>
+      <div class="links">
+        <a href="#about">व्हिजन</a>
+        <a href="#vision">उपक्रम</a>
+        <a href="#prashasan">प्रशासन</a>
+        <a href="#mandal">अष्टप्रधान मंडळ</a>
+        <a href="#apply">पदासाठी अर्ज</a>
+        <a href="#plan">आराखडा</a>
+        <a href="#roadmap">वाटचाल</a>
+        <a href="#trust">पारदर्शकता</a>
+        <a href="#faq">प्रश्नोत्तरे</a>
+        <a href="#join" class="btn">सहभाग नोंदवा</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home" style="border-top:0">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>एकजूट समाजाची,<em>समृद्ध महाराष्ट्राची.</em></h1>
+      <p>छत्रपती शिवाजी महाराजांच्या विचारांपासून प्रेरित, शिक्षण, रोजगार, उद्योग आणि शेतीसाठी लोकांना एकत्र आणणारा प्रस्तावित उपक्रम. प्रत्येकाचे छोटे योगदान मोठ्या बदलाची सुरुवात ठरू शकते.</p>
+      <div class="actions">
+        <a href="#vision" class="btn">आमचे उपक्रम पहा</a>
+        <a href="#join" class="btn ghost">माझा सहभाग नोंदवा</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <div class="frame">
+        <img id="rajaImg" alt="छत्रपती शिवाजी महाराज" hidden>
+        <div class="flag" id="flagFb" aria-hidden="true">
+          <div class="pole"></div><div class="cloth"></div>
+          <div class="motto">स्वाभिमान · स्वावलंबन · लोककल्याण</div>
+        </div>
+      </div>
+      <figcaption>छत्रपती शिवाजी महाराज<small>स्वराज्याचे प्रेरणास्थान</small></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="mudra">
+  <small>राजमुद्रा</small>
+  <q>प्रतिपच्चन्द्रलेखेव वर्धिष्णुर्विश्ववन्दिता ।<br>शाहसूनोः शिवस्यैषा मुद्रा भद्राय राजते ॥</q>
+  <p>प्रतिपदेच्या चंद्रकोरीप्रमाणे वाढत जाणारी आणि जगाने वंदन करावी अशी ही शहाजीपुत्र शिवाजींची मुद्रा लोककल्याणासाठी शोभून दिसते.</p>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <h2 style="font-size:clamp(28px,4vw,42px);margin-bottom:18px">आमचे व्हिजन</h2>
+        <p>महाराष्ट्रातील प्रत्येक व्यक्तीला प्रगतीची संधी मिळावी, समाजात एकजूट आणि परस्पर सहकार्य वाढावे आणि शिक्षण, रोजगार, उद्योजकता व सामाजिक विकासातून महाराष्ट्र अधिक सक्षम, समृद्ध आणि आत्मनिर्भर व्हावा, असे व्यापक जनसहभागाचे व्यासपीठ उभारणे.</p>
+        <p style="margin-top:14px">छत्रपती शिवाजी महाराजांच्या स्वराज्याच्या प्रेरणेतून जनतेचा सहभाग, लोककल्याण, दूरदृष्टी आणि जबाबदारी ही मूल्ये केंद्रस्थानी ठेवून उज्ज्वल भविष्य घडवणे, हे स्वराज्य एम्पायरचे व्हिजन आहे.</p>
+        <p class="sankalp">“शिवरायांची प्रेरणा, जनतेच्या प्रगतीचा ध्यास.”</p>
+      </div>
+      <div>
+        <h3>आमचे ध्येय</h3>
+        <ul class="mission">
+          <li><b>समाजाची एकजूट</b><span>लोकांना समान प्रगतीच्या विचाराभोवती एकत्र आणणे.</span></li>
+          <li><b>शिक्षण आणि कौशल्ये</b><span>तरुणांना ज्ञान, कौशल्ये आणि नवीन संधी मिळण्यासाठी प्रोत्साहन देणे.</span></li>
+          <li><b>रोजगार आणि उद्योजकता</b><span>युवकांना स्वतःच्या पायावर उभे राहण्यास आणि व्यवसायसंधी शोधण्यास मदत करणारे व्यासपीठ.</span></li>
+          <li><b>सामाजिक विकास</b><span>समाजाच्या गरजा समजून लोकहिताचे उपक्रम राबवण्याची दिशा ठरवणे.</span></li>
+          <li><b>ग्रामीण आणि शहरी प्रगती</b><span>दोन्ही भागांतील लोकांना प्रगतीच्या प्रवासात सहभागी करून घेणे.</span></li>
+          <li><b>पारदर्शकता आणि विश्वास</b><span>जबाबदारी, स्पष्ट कार्यपद्धती आणि जनतेचा विश्वास जपणे.</span></li>
+          <li><b>जनसहभागातून परिवर्तन</b><span>प्रत्येकाचा विचार, वेळ, कौशल्य आणि स्वेच्छेच्या सहभागाला महत्त्व देणे.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="values">
+      <div><h3>एकजूट</h3><p>व्यक्तीपेक्षा सामूहिक प्रगतीला महत्त्व देणे.</p></div>
+      <div><h3>विश्वास आणि पारदर्शकता</h3><p>प्रामाणिकपणा, जबाबदारी आणि स्पष्ट व्यवहार जपणे.</p></div>
+      <div><h3>दूरदृष्टी आणि नवकल्पना</h3><p>नवीन कल्पनांना प्रोत्साहन देऊन भविष्याचा विचार करणे.</p></div>
+      <div><h3>लोककल्याण</h3><p>समाजाच्या गरजा आणि लोकांच्या सन्मानाला प्राधान्य देणे.</p></div>
+    </div>
+    <div class="concept">
+      <q>प्रत्येक व्यक्ती सक्षम, प्रत्येक कुटुंब समृद्ध आणि महाराष्ट्र प्रगत.</q>
+      <p>स्वराज्य एम्पायर हे केवळ एक नाव नसून, जनसहभागातून समाजाच्या प्रगतीसाठी काम करण्याची संकल्पना आहे. लोकांना एकत्र आणणे, त्यांच्या कल्पनांना दिशा देणे आणि योग्य नियोजनातून सकारात्मक बदल घडवण्याचा प्रयत्न करणे, हा तिचा केंद्रबिंदू आहे.</p>
+    </div>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="wrap">
+    <div class="head">
+      <h2>आपण घडवू इच्छितो असा महाराष्ट्र</h2>
+      <p>लोकसहभाग, जबाबदार व्यवस्थापन आणि पारदर्शकता या तीन गोष्टींवर आधारित सात क्षेत्रे. कोणत्याही योजनेची अंमलबजावणी करण्यापूर्वी तिचा अभ्यास केला जाईल.</p>
+    </div>
+    <ul class="areas">
+      <li><span class="ic">🎓</span><h3>शिक्षण व शिष्यवृत्ती</h3><p>गरजू विद्यार्थ्यांना शिक्षणसंधी, डिजिटल शिक्षण आणि स्पर्धा परीक्षांसाठी मार्गदर्शन.</p></li>
+      <li><span class="ic">💼</span><h3>रोजगार व कौशल्य</h3><p>कौशल्य प्रशिक्षण, रोजगार मेळावे आणि उद्योगांच्या गरजांनुसार तयारी.</p></li>
+      <li><span class="ic">🏭</span><h3>उद्योग व उद्योजकता</h3><p>लघुउद्योग आणि स्टार्टअप्ससाठी मार्गदर्शन व उद्योजकांचे नेटवर्क.</p></li>
+      <li><span class="ic">🌾</span><h3>शेती व ग्रामीण विकास</h3><p>शेतकरी प्रशिक्षण, कृषी-प्रक्रिया, पाणी व्यवस्थापन आणि बाजारपेठेशी जोडणी.</p></li>
+      <li><span class="ic">🩺</span><h3>आरोग्य व सामाजिक सहाय्य</h3><p>आरोग्य जागरूकता, तपासणी शिबिरे आणि पात्र गरजू कुटुंबांना सहाय्य.</p></li>
+      <li><span class="ic">🏰</span><h3>किल्ले संवर्धन व इतिहास जपणूक</h3><p>गडकोटांची स्वच्छता व संवर्धन, इतिहासाचे दस्तऐवजीकरण आणि नव्या पिढीपर्यंत शिवकालीन वारसा पोहोचवणे.</p></li>
+      <li><span class="ic">🤝</span><h3>व्यवसाय नेटवर्क</h3><p>व्यावसायिकांना एकत्र जोडणे, अनुभवांची देवाणघेवाण आणि नवीन संधी.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="idea" id="idea">
+  <div class="wrap idea-grid">
+    <div class="rupee" aria-label="पाचशे रुपये">₹500</div>
+    <div>
+      <h2>छोटं योगदान. मोठं ध्येय.</h2>
+      <p>प्रत्येक इच्छुक व्यक्तीने स्वेच्छेने ₹500 चे योगदान द्यावे, अशी प्रस्तावित कल्पना. अनेकांनी सहभाग घेतला, तर शिक्षण, रोजगार आणि सामाजिक विकासाचे प्रकल्प राबवता येतील.</p>
+      <ul class="ticks">
+        <li>सहभाग पूर्णपणे स्वेच्छेने; कोणतीही सक्ती नाही.</li>
+        <li>निधीचे उद्दिष्ट आणि वापर स्पष्टपणे जाहीर केला जाईल.</li>
+        <li>प्रकल्पनिहाय खर्च आणि परिणामांचा अहवाल.</li>
+        <li>कायदेशीर रचना तयार झाल्यानंतरच अधिकृत निधी संकलन.</li>
+      </ul>
+      <p style="margin-top:22px"><a class="btn" href="#join">सहभागाची इच्छा नोंदवा</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="wrap">
+    <div class="head">
+      <h2>₹500 चे गणित: प्रस्तावित आर्थिक आराखडा</h2>
+      <p>प्रत्येक व्यक्तीचे स्वेच्छेचे योगदान ₹500 धरले आहे; कोणी जास्त देईल असा हिशोब नाही. संभाव्य सहभागी: ३ कोटी ६० लाख. सर्वांनी दिल्यास ₹1,800 कोटी, पण प्रत्यक्ष निधी सहभागावर अवलंबून असेल.</p>
+    </div>
+
+    <div class="calc">
+      <label for="calc-n">किती लोकांनी ₹500 दिल्यास?</label>
+      <input type="range" id="calc-n" min="100000" max="36000000" step="100000" value="1000000">
+      <div class="out" aria-live="polite"><span id="calc-ppl">10 लाख</span> लोक →<div class="amt" id="calc-amt">₹50 कोटी</div></div>
+    </div>
+
+    <div class="plan-grid">
+      <div>
+        <h3>किती लोक, किती निधी</h3>
+        <table class="tbl">
+          <thead><tr><th>योगदान देणारे</th><th>एकूण निधी</th></tr></thead>
+          <tbody>
+            <tr><td>10,000 (पहिले ध्येय)</td><td>₹50 लाख</td></tr>
+            <tr><td>1 लाख</td><td>₹5 कोटी</td></tr>
+            <tr><td>10 लाख</td><td>₹50 कोटी</td></tr>
+            <tr><td>25 लाख</td><td>₹125 कोटी</td></tr>
+            <tr><td>50 लाख</td><td>₹250 कोटी</td></tr>
+            <tr><td>1 कोटी</td><td>₹500 कोटी</td></tr>
+            <tr><td>2 कोटी</td><td>₹1,000 कोटी</td></tr>
+            <tr class="tot"><td>3 कोटी 60 लाख</td><td>₹1,800 कोटी</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>₹1,800 कोटींचा प्राथमिक आराखडा</h3>
+        <ul class="al" id="alloc"></ul>
+      </div>
+    </div>
+
+    <div class="notice"><strong>हे संकल्पनात्मक अंदाजपत्रक आहे.</strong> संपूर्ण रक्कम जमा झाल्याचे किंवा या खर्चांना मंजुरी मिळाल्याचे यात गृहीत धरलेले नाही. पहिले ध्येय ₹1,800 कोटींचे नाही, तर पहिल्या 10,000 लोकांचा विश्वास संपादन करून प्रत्यक्ष काम सुरू करणे हे आहे. ₹500 चे योगदान स्वेच्छेचे असावे; निधी गोळा करण्यापूर्वी कायदेशीर सल्ला, योग्य संस्थात्मक रचना, अधिकृत पावत्या आणि स्वतंत्र लेखापरीक्षण आवश्यक आहे.</div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="head">
+      <h2>कल्पनेपासून प्रत्यक्ष कृतीपर्यंत</h2>
+      <p>मोठा खर्च करण्यापूर्वी छोट्या टप्प्यांत काम करून परिणाम तपासले जातील.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>नियोजन व कायदेशीर रचना</h3><p>तज्ज्ञांचा सल्ला, योग्य संस्था निवड, नियम आणि आर्थिक व्यवहार्यता.</p></li>
+      <li><h3>समुदायाशी संवाद</h3><p>लोकांच्या गरजा समजून घेणे आणि संमतीने इच्छुकांची नोंद.</p></li>
+      <li><h3>प्रायोगिक प्रकल्प</h3><p>मर्यादित बजेटमध्ये पहिला प्रकल्प आणि स्वतंत्र परिणाममापन.</p></li>
+      <li><h3>महाराष्ट्रभर विस्तार</h3><p>परिणाम सिद्ध झाल्यानंतरच विभागीय व जिल्हास्तरीय विस्तार.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="prashasan">
+  <div class="wrap">
+    <div class="head">
+      <h2>संपूर्ण प्रशासन व्यवस्था</h2>
+      <p>केंद्रापासून गावापर्यंत सहा स्तरांची प्रस्तावित रचना. प्रत्येक पदासाठी कार्यक्षेत्र आणि जबाबदारी स्वतंत्रपणे निश्चित केली जाईल.</p>
+    </div>
+    <ol class="levels">
+      <li><h3>केंद्रीय नेतृत्व</h3><p><b>पदे:</b> संस्थापक / प्रमुख, केंद्रीय समन्वयक.</p><p><b>जबाबदारी:</b> ध्येयधोरण, संघटनात्मक निर्णय, विभागांमधील समन्वय आणि कामाचा आढावा.</p></li>
+      <li><h3>अष्टप्रधान मंडळ</h3><p><b>पदे:</b> आठ प्रमुख विभागांचे प्रमुख.</p><p><b>जबाबदारी:</b> प्रशासन, अर्थ, दस्तऐवज, स्वयंसेवक, जनसंपर्क, तक्रार निवारण, निरीक्षण आणि सामाजिक कल्याण.</p></li>
+      <li><h3>प्रांतीय / विभागीय व्यवस्था</h3><p><b>पदे:</b> प्रांतप्रमुख, विभागप्रमुख.</p><p><b>जबाबदारी:</b> स्थानिक संघटनांना मार्गदर्शन, कामाचे नियोजन आणि केंद्रीय नेतृत्वाला अहवाल.</p></li>
+      <li><h3>जिल्हा प्रशासन</h3><p><b>पदे:</b> जिल्हाप्रमुख, जिल्हा समन्वयक.</p><p><b>जबाबदारी:</b> जिल्हास्तरीय उपक्रम, सदस्य समन्वय आणि विभागीय उद्दिष्टांची अंमलबजावणी.</p></li>
+      <li><h3>तालुका प्रशासन</h3><p><b>पदे:</b> तालुकाप्रमुख, तालुका प्रतिनिधी.</p><p><b>जबाबदारी:</b> तालुक्यातील उपक्रमांचे आयोजन, गावांशी संपर्क आणि कामाचा नियमित आढावा.</p></li>
+      <li><h3>गाव / स्थानिक समिती</h3><p><b>पदे:</b> गावप्रमुख, स्थानिक प्रतिनिधी, स्वयंसेवक.</p><p><b>जबाबदारी:</b> नागरिकांशी संवाद, स्थानिक गरजा समजून घेणे आणि सामाजिक उपक्रम राबवणे.</p></li>
+    </ol>
+    <div class="notice"><strong>टीप:</strong> ही प्रस्तावित संघटनात्मक रचना आहे. पदे आणि जबाबदाऱ्या नोंदणी व नियमावली निश्चित झाल्यानंतर अंतिम केल्या जातील.</div>
+  </div>
+</section>
+
+<section id="mandal">
+  <div class="wrap">
+    <div class="head">
+      <h2>अष्टप्रधान मंडळ</h2>
+      <p>आठ पदे — एक ध्येय — समृद्ध समाज.</p>
+      <p style="margin-top:10px">छत्रपती शिवाजी महाराजांच्या स्वराज्याच्या प्रशासनातून प्रेरणा घेऊन, स्वराज्य एम्पायर सामाजिक विकास, आर्थिक स्वावलंबन, शिक्षण, रोजगार आणि जनकल्याणासाठी अष्टप्रधान मंडळाची संकल्पना स्वीकारते. या मंडळाचा उद्देश संघटनेचे कामकाज शिस्तबद्ध, पारदर्शक, जबाबदार आणि लोकाभिमुख पद्धतीने चालवणे हा आहे.</p>
+    </div>
+    <div class="posts">
+      <article class="post">
+        <h3>प्रधान <span>मुख्य प्रशासक</span></h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> संपूर्ण संघटनेच्या कामकाजाचे नेतृत्व आणि समन्वय.</p>
+        <ul><li>सर्व विभागांच्या कामकाजावर देखरेख.</li><li>केंद्रीय परिषदेने मंजूर केलेल्या धोरणांची अंमलबजावणी.</li><li>वार्षिक उद्दिष्टे आणि कार्ययोजनांचे नियोजन.</li><li>विविध विभागांमध्ये समन्वय राखणे.</li></ul>
+        
+      </article>
+      <article class="post">
+        <h3>अमात्य <span>वित्त व अर्थव्यवस्था प्रमुख</span></h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> आर्थिक शिस्त, निधी व्यवस्थापन आणि पारदर्शकता.</p>
+        <ul><li>वार्षिक अर्थसंकल्प तयार करणे.</li><li>उत्पन्न व खर्चाच्या नोंदींची देखरेख.</li><li>शिक्षण, रोजगार आणि सामाजिक उपक्रमांसाठी निधी नियोजन.</li><li>आर्थिक अहवाल आणि स्वतंत्र लेखापरीक्षणास सहकार्य.</li></ul>
+        
+      </article>
+      <article class="post">
+        <h3>सचिव <span>प्रशासन व दस्तऐवज प्रमुख</span></h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> संस्थेच्या अधिकृत नोंदी आणि प्रशासकीय प्रक्रिया.</p>
+        <ul><li>बैठकींचे इतिवृत्त व निर्णय नोंदवणे.</li><li>अधिकृत पत्रव्यवहार आणि दस्तऐवज व्यवस्थापन.</li><li>सदस्य नोंदणी आणि नियमावलीच्या नोंदी.</li><li>ठरावांच्या अंमलबजावणीचा पाठपुरावा.</li></ul>
+        
+      </article>
+      <article class="post">
+        <h3>सुमंत <span>जनसंपर्क व समन्वय प्रमुख</span></h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> समाज, संस्था आणि व्यावसायिक क्षेत्राशी संवाद.</p>
+        <ul><li>सामाजिक संस्था आणि शैक्षणिक संस्थांशी समन्वय.</li><li>उद्योग, उद्योजक आणि रोजगारदात्यांशी संपर्क.</li><li>समाजातील गरजा आणि सूचना केंद्रीय परिषदेसमोर मांडणे.</li><li>सहकार्य प्रकल्प आणि जनजागृती उपक्रम विकसित करणे.</li></ul>
+        
+      </article>
+      <article class="post">
+        <h3>सेनापती <span>स्वयंसेवक व आपत्ती सहाय्य प्रमुख</span></h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> स्वयंसेवकांचे संघटन आणि मदतकार्याचे नियोजन.</p>
+        <ul><li>स्वयंसेवकांची नोंदणी व प्रशिक्षण.</li><li>नैसर्गिक आपत्तीच्या वेळी मदतकार्याचे समन्वयन.</li><li>सामाजिक उपक्रमांमध्ये शिस्त आणि सुरक्षिततेची काळजी.</li><li>अधिकृत आपत्कालीन यंत्रणांशी समन्वय.</li></ul>
+        <p class="pnote">हे पद सामाजिक स्वयंसेवा आणि मदतकार्यासाठी आहे; कोणतेही स्वतंत्र सैन्य किंवा कायद्याची अंमलबजावणी करण्याचे अधिकार यामध्ये अभिप्रेत नाहीत.</p>
+      </article>
+      <article class="post">
+        <h3>पंडितराव <span>सामाजिक कल्याण व संस्कृती प्रमुख</span></h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> समाजकल्याण, सांस्कृतिक वारसा आणि सामाजिक एकोपा.</p>
+        <ul><li>गरजू विद्यार्थ्यांना व कुटुंबांना सहाय्य योजनांचे नियोजन.</li><li>आरोग्य शिबिरे आणि सामाजिक जनजागृती.</li><li>ऐतिहासिक वारसा आणि सांस्कृतिक उपक्रमांना प्रोत्साहन.</li><li>सामाजिक सलोखा आणि सर्वसमावेशक सहभाग वाढवणे.</li></ul>
+        
+      </article>
+      <article class="post">
+        <h3>न्याय व तक्रार निवारण प्रमुख</h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> संस्थेतील तक्रारींचे निष्पक्ष निराकरण.</p>
+        <ul><li>सदस्य व लाभार्थ्यांच्या तक्रारी स्वीकारणे.</li><li>निष्पक्ष चौकशी आणि सुनावणीची प्रक्रिया राबवणे.</li><li>निर्णयाविरुद्ध अपील करण्याची व्यवस्था.</li><li>भेदभाव, गैरवर्तन आणि हितसंबंधांच्या संघर्षाबाबत नियमांचे पालन तपासणे.</li></ul>
+        <p class="pnote">हे पद संस्थेच्या अंतर्गत तक्रारींसाठी आहे; न्यायालयीन अधिकारांचा पर्याय नाही.</p>
+      </article>
+      <article class="post">
+        <h3>माहिती व जनहित निरीक्षण प्रमुख</h3>
+        <p class="duty"><b>मुख्य जबाबदारी:</b> कामकाजाची प्रगती, उत्तरदायित्व आणि जनतेचा अभिप्राय.</p>
+        <ul><li>योजनांची प्रगती आणि लाभार्थ्यांपर्यंत पोहोच यांचे निरीक्षण.</li><li>सदस्यांच्या सूचना व अभिप्राय संकलित करणे.</li><li>गैरव्यवहाराच्या तक्रारी योग्य विभागाकडे पाठवणे.</li><li>गोपनीयता आणि माहितीच्या सुरक्षिततेची काळजी घेणे.</li></ul>
+        
+      </article>
+    </div>
+
+    <h3 class="mh">अष्टप्रधान मंडळाची कार्यपद्धती</h3>
+    <ol class="method">
+      <li>सर्व पदाधिकाऱ्यांच्या जबाबदाऱ्या लिखित स्वरूपात निश्चित केल्या जातील.</li>
+      <li>महत्त्वाचे निर्णय मंजूर नियमावलीनुसार आणि सामूहिक चर्चेतून घेतले जातील.</li>
+      <li>आर्थिक व्यवहारांची नोंद ठेवून नियमानुसार लेखापरीक्षण केले जाईल.</li>
+      <li>प्रत्येक विभागाच्या कामगिरीचा ठरावीक कालावधीनंतर आढावा घेतला जाईल.</li>
+      <li>सर्व पदाधिकारी संस्थेच्या उद्दिष्टांसाठी, लागू कायद्यांनुसार आणि उत्तरदायित्वाच्या तत्त्वावर काम करतील.</li>
+    </ol>
+
+    <div class="concept" style="margin-top:36px">
+      <q>एकजूट समाजाची, समृद्ध महाराष्ट्राची.</q>
+      <p>स्वराज्य एम्पायरचे अष्टप्रधान मंडळ हे सामाजिक जबाबदारी, आर्थिक स्वावलंबन, पारदर्शक प्रशासन आणि लोकसहभाग यांच्या आधारावर विकासासाठी कार्य करण्याची संकल्पना आहे.</p>
+    </div>
+    <div class="notice"><strong>टीप:</strong> ही स्वराज्य एम्पायरसाठी प्रस्तावित आधुनिक संघटनात्मक रचना आहे. ती छत्रपती शिवाजी महाराजांच्या ऐतिहासिक अष्टप्रधान मंडळाची तंतोतंत प्रतिकृती नाही आणि कोणत्याही शासकीय अधिकाराचा दावा करत नाही.</div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <div class="head">
+      <h2>इच्छुक पदाधिकारी अर्ज</h2>
+      <p>प्रशासन व्यवस्थेत जबाबदारी घेण्याची तुमची इच्छा असेल तर हा अर्ज भरा. अर्ज सादर केल्याने पद निश्चित होत नाही; निवड स्वतंत्र छाननी व मान्यतेनंतर केली जाईल.</p>
+    </div>
+    <form id="af" novalidate>
+      <div class="two">
+        <div class="f"><label for="a-name">पूर्ण नाव *</label><input id="a-name" autocomplete="name" required maxlength="100" placeholder="तुमचे पूर्ण नाव"></div>
+        <div class="f"><label for="a-phone">मोबाईल नंबर *</label><input id="a-phone" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" required placeholder="10 अंकी नंबर"></div>
+      </div>
+      <div class="two">
+        <div class="f"><label for="a-email">ई-मेल</label><input id="a-email" type="email" autocomplete="email" maxlength="100" placeholder="example@email.com"></div>
+        <div class="f"><label for="a-age">वय *</label><input id="a-age" type="number" min="18" max="100" required placeholder="किमान 18"></div>
+      </div>
+      <div class="two">
+        <div class="f"><label for="a-district">जिल्हा *</label><input id="a-district" required maxlength="60" placeholder="जिल्ह्याचे नाव"></div>
+        <div class="f"><label for="a-taluka">तालुका *</label><input id="a-taluka" required maxlength="60" placeholder="तालुक्याचे नाव"></div>
+      </div>
+      <div class="f"><label for="a-village">गाव / शहर *</label><input id="a-village" required maxlength="60" placeholder="गाव किंवा शहर"></div>
+      <div class="two">
+        <div class="f"><label for="a-edu">शैक्षणिक पात्रता *</label>
+          <select id="a-edu" required><option value="">निवडा</option><option>10 वी</option><option>12 वी</option><option>पदविका</option><option>पदवी</option><option>पदव्युत्तर</option><option>इतर</option></select></div>
+        <div class="f"><label for="a-exp">सामाजिक / संघटनात्मक अनुभव</label>
+          <select id="a-exp"><option value="">निवडा</option><option>अनुभव नाही</option><option>1 वर्षापेक्षा कमी</option><option>1 ते 3 वर्षे</option><option>3 वर्षांपेक्षा जास्त</option></select></div>
+      </div>
+      <div class="f"><label for="a-post">इच्छित पद *</label>
+        <select id="a-post" required><option value="">इच्छित पद निवडा</option><option>प्रधान — मुख्य प्रशासक</option><option>अमात्य — वित्त व अर्थव्यवस्था प्रमुख</option><option>सचिव — प्रशासन व दस्तऐवज प्रमुख</option><option>सुमंत — जनसंपर्क व समन्वय प्रमुख</option><option>सेनापती — स्वयंसेवक व आपत्ती सहाय्य प्रमुख</option><option>पंडितराव — सामाजिक कल्याण व संस्कृती प्रमुख</option><option>न्याय व तक्रार निवारण प्रमुख</option><option>माहिती व जनहित निरीक्षण प्रमुख</option><option>प्रांतप्रमुख / विभागप्रमुख</option><option>जिल्हाप्रमुख</option><option>तालुकाप्रमुख</option><option>गावप्रमुख</option><option>स्थानिक प्रतिनिधी</option><option>स्वयंसेवक</option></select></div>
+      <div class="f"><label for="a-skills">तुमची कौशल्ये व अनुभव</label><textarea id="a-skills" maxlength="500" placeholder="तुम्ही कोणत्या कामात योगदान देऊ शकता?"></textarea></div>
+      <div class="f"><label for="a-reason">या पदासाठी इच्छुक असण्याचे कारण *</label><textarea id="a-reason" required maxlength="500" placeholder="तुमचे उद्दिष्ट आणि योगदान स्पष्ट करा"></textarea></div>
+      <input class="hp" id="a-website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" id="a-consent" required><span>मी दिलेली माहिती माझ्या माहितीनुसार खरी आहे आणि अर्जाच्या छाननीसाठी तिचा वापर होऊ शकतो, यास संमती देतो/देते. *</span></label>
+      <button type="submit" class="btn">अर्ज सादर करा</button>
+      <p id="amsg" role="status" aria-live="polite">डेमो: हा फॉर्म सध्या माहिती साठवत नाही. अर्ज प्रत्यक्ष मिळवण्यासाठी Google Sheet जोडणे आवश्यक आहे.</p>
+    </form>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="wrap">
+    <div class="head">
+      <h2>विश्वास हा आपल्या कामाचा पाया</h2>
+      <p>सार्वजनिक विश्वास टिकवण्यासाठी स्पष्ट नियम, नोंदी आणि स्वतंत्र देखरेख आवश्यक आहे.</p>
+    </div>
+    <div class="trust">
+      <div><h3>सार्वजनिक अहवाल</h3><p>निधी संकलन सुरू झाल्यावर प्राप्ती, खर्च आणि प्रकल्पांची माहिती प्रकाशित केली जाईल.</p></div>
+      <div><h3>स्वतंत्र लेखापरीक्षण</h3><p>लागू नियमांनुसार हिशेब तपासणी, आर्थिक नियंत्रण आणि हितसंबंधांचा संघर्ष टाळणे.</p></div>
+      <div><h3>माहितीची सुरक्षा</h3><p>फक्त आवश्यक माहिती घेणे, ती सुरक्षित ठेवणे आणि प्रवेश मर्यादित ठेवणे.</p></div>
+    </div>
+    <div class="notice"><strong>सध्या हा प्रस्तावित उपक्रम आहे.</strong> या वेबसाइटवरील उद्दिष्टे संकल्पनात्मक आहेत. संस्था नोंदणी, अधिकृत बँक खाते आणि आवश्यक अनुपालन पूर्ण होईपर्यंत या वेबसाइटवरून कोणतेही पैसे पाठवू नका.</div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head">
+      <h2>नेहमी विचारले जाणारे प्रश्न</h2>
+      <p>सहभागी होण्यापूर्वी अनेकांना पडणाऱ्या प्रश्नांची सरळ उत्तरे.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>हा उपक्रम सध्या कोणत्या टप्प्यावर आहे?</summary>
+        <p>हा प्रस्तावित उपक्रम आहे. वेबसाइटवरील उद्दिष्टे संकल्पनात्मक आहेत आणि संस्था नोंदणी व आवश्यक अनुपालन पूर्ण होणे बाकी आहे.</p>
+      </details>
+      <details>
+        <summary>सहभागी होण्यासाठी पैसे द्यावे लागतात का?</summary>
+        <p>नाही. फॉर्ममध्ये फक्त तुमचा पाठिंबा आणि इच्छा नोंदवायची आहे. अधिकृत बँक खाते जाहीर होईपर्यंत कोणालाही पैसे पाठवू नका.</p>
+      </details>
+      <details>
+        <summary>फॉर्ममध्ये कोणती माहिती द्यावी लागते?</summary>
+        <p>नाव, मोबाईल नंबर, जिल्हा आणि आवडीचा उपक्रम आवश्यक आहे. व्यवसाय, सूचना आणि आधार नंबर ऐच्छिक आहेत. आधार नंबर फक्त तपासला जातो, तो पाठवला किंवा साठवला जात नाही.</p>
+      </details>
+      <details>
+        <summary>माझी माहिती कशासाठी वापरली जाईल?</summary>
+        <p>फक्त उपक्रमाबद्दल तुमच्याशी संपर्क करण्यासाठी, आणि ती तुमच्या संमतीनेच. संमती ऐच्छिक आहे.</p>
+      </details>
+      <details>
+        <summary>मला अष्टप्रधान मंडळात पद मिळू शकते का?</summary>
+        <p>पदांची रचना आणि निवडपद्धती अष्टप्रधान मंडळ विभागात दिली आहे. पद ठरवण्याची प्रक्रिया अर्ज सादर केल्यानंतर स्वतंत्रपणे होते.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="wrap join-grid">
+    <div>
+      <h2>तुम्ही या विचारासोबत आहात का?</h2>
+      <p id="join-note">प्रस्तावित उपक्रमांबद्दल माहिती हवी असल्यास फॉर्म भरा. यात पैसे द्यायचे नाहीत; फक्त तुमचा पाठिंबा आणि इच्छा नोंदवा.</p>
+      <div class="stats" aria-live="polite" style="margin-top:22px">
+        <div class="stat"><strong id="c-total">0</strong>एकूण नोंदणी</div>
+        <div class="stat"><strong id="c-support">0</strong>पाठिंबा देणारे</div>
+        <div class="stat"><strong id="c-aware">0</strong>जागृत लोक</div>
+        <div class="stat"><strong id="c-interest">0</strong>सहभागात इंटरेस्ट</div>
+        <div class="stat"><strong id="c-one">0</strong>महाराष्ट्र नंबर एक होईल असे वाटणारे</div>
+      </div>
+      <div class="goalbar" aria-hidden="true"><i id="c-bar"></i></div>
+      <p class="goal-note" style="margin-top:8px">पहिले ध्येय: 10,000 लोक · <span id="c-goal">0%</span> पूर्ण</p>
+      <ul class="ticks" style="color:var(--muted)">
+        <li>स्वेच्छेने सहभाग</li>
+        <li>माहितीचा जबाबदार वापर</li>
+        <li>कोणतीही आर्थिक सक्ती नाही</li>
+      </ul>
+    </div>
+    <form id="f" novalidate>
+      <div class="f"><label for="name">पूर्ण नाव *</label><input id="name" autocomplete="name" required maxlength="100" placeholder="तुमचे पूर्ण नाव"></div>
+      <div class="two">
+        <div class="f"><label for="phone">मोबाईल नंबर *</label><input id="phone" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" required placeholder="10 अंकी नंबर"></div>
+        <div class="f"><label for="district">जिल्हा *</label>
+          <select id="district" required>
+            <option value="">जिल्हा निवडा</option>
+            <option>पुणे</option><option>मुंबई शहर</option><option>मुंबई उपनगर</option><option>ठाणे</option><option>पालघर</option><option>रायगड</option><option>रत्नागिरी</option><option>सिंधुदुर्ग</option><option>नाशिक</option><option>धुळे</option><option>नंदुरबार</option><option>जळगाव</option><option>अहिल्यानगर</option><option>सातारा</option><option>सांगली</option><option>कोल्हापूर</option><option>सोलापूर</option><option>छत्रपती संभाजीनगर</option><option>जालना</option><option>बीड</option><option>धाराशिव</option><option>लातूर</option><option>नांदेड</option><option>परभणी</option><option>हिंगोली</option><option>अमरावती</option><option>अकोला</option><option>वाशिम</option><option>बुलढाणा</option><option>यवतमाळ</option><option>नागपूर</option><option>वर्धा</option><option>भंडारा</option><option>गोंदिया</option><option>चंद्रपूर</option><option>गडचिरोली</option>
+          </select></div>
+      </div>
+      <div class="f"><label for="business">तुमचा व्यवसाय</label><input id="business" maxlength="100" autocomplete="organization-title" placeholder="उदा. शेती, दुकान, नोकरी, विद्यार्थी, उद्योग"></div>
+      <div class="f"><label for="aadhaar">आधार कार्ड नंबर (ऐच्छिक)</label><input id="aadhaar" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="12 अंकी आधार नंबर"><p class="hint">हा नंबर फक्त ओळख पडताळणीसाठी आहे. तो कोणालाही शेअर करू नका; हा नंबर या वेबसाईटवरून कुठेही पाठवला किंवा साठवला जात नाही.</p></div>
+      <div class="f"><label for="interest">कोणत्या उपक्रमात रस आहे? *</label>
+        <select id="interest" required>
+          <option value="">पर्याय निवडा</option><option>शिक्षण व शिष्यवृत्ती</option><option>रोजगार व कौशल्य</option><option>उद्योग व उद्योजकता</option><option>शेती व ग्रामीण विकास</option><option>आरोग्य व सामाजिक सहाय्य</option><option>किल्ले संवर्धन व इतिहास जपणूक</option><option>स्वयंसेवा</option><option>सर्व उपक्रम</option>
+        </select></div>
+      <div class="f"><label for="msg2">सूचना किंवा संदेश (ऐच्छिक)</label><textarea id="msg2" maxlength="500" placeholder="तुमच्या सूचना येथे लिहा"></textarea></div>
+      <fieldset class="opin">
+        <legend>तुमचे मत (जे लागू असेल ते निवडा)</legend>
+        <label class="chk"><input type="checkbox" id="o-support"><span>मी या विचाराला <b>पाठिंबा</b> देतो/देते.</span></label>
+        <label class="chk"><input type="checkbox" id="o-aware"><span>मला समाजाच्या एकजुटीबद्दल <b>जागृती</b> आहे आणि मी इतरांना सांगतो/सांगते.</span></label>
+        <label class="chk"><input type="checkbox" id="o-interest"><span>मला यात <b>सहभागी</b> व्हायला इंटरेस्ट आहे.</span></label>
+        <label class="chk"><input type="checkbox" id="o-one"><span>मला वाटते हा महाराष्ट्र जगात <b>एक नंबर</b> होऊ शकतो.</span></label>
+      </fieldset>
+      <input class="hp" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="consent"><input type="checkbox" id="consent" required><span>माझ्या सहभागाच्या इच्छेबाबत संपर्क करण्यासाठी मी दिलेली माहिती वापरण्यास संमती देतो/देते. ही संमती ऐच्छिक आहे आणि मी कोणतेही पैसे देण्यास बाध्य नाही.</span></label>
+      <button type="submit" class="btn">सहभागाची इच्छा नोंदवा</button>
+      <p id="msg" role="status" aria-live="polite">डेमो: हा फॉर्म माहिती साठवत नाही. प्रत्यक्ष वापरापूर्वी सुरक्षित सर्व्हर आणि गोपनीयता धोरण आवश्यक आहे.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="logo"><span class="pennant" aria-hidden="true"></span><b>Swarajya Empire</b></div>
+        <p>शिक्षण · रोजगार · उद्योग · लोककल्याण</p>
+      </div>
+      <div>
+        <strong>महत्त्वाची सूचना</strong>
+        <p>हा प्रस्तावित सामाजिक विकास उपक्रम आहे. अधिकृत संस्था, नोंदणी आणि संपर्क तपशील निश्चित झाल्यानंतरच ते येथे प्रकाशित करावेत.</p>
+      </div>
+    </div>
+    <hr>
+    <small>© <span id="y">2026</span> Swarajya Empire. सर्व हक्क राखीव.</small>
+  </div>
+</footer>
+
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+function validAadhaar(n){
+  if(!/^[2-9][0-9]{11}$/.test(n))return false;
+  var d=[[0,1,2,3,4,5,6,7,8,9],[1,2,3,4,0,6,7,8,9,5],[2,3,4,0,1,7,8,9,5,6],[3,4,0,1,2,8,9,5,6,7],[4,0,1,2,3,9,5,6,7,8],[5,9,8,7,6,0,4,3,2,1],[6,5,9,8,7,1,0,4,3,2],[7,6,5,9,8,2,1,0,4,3],[8,7,6,5,9,3,2,1,0,4],[9,8,7,6,5,4,3,2,1,0]],
+  p=[[0,1,2,3,4,5,6,7,8,9],[1,5,7,6,2,8,3,0,9,4],[5,8,0,3,7,9,6,1,4,2],[8,9,1,6,0,4,3,5,2,7],[9,4,5,3,1,2,6,8,7,0],[4,2,8,6,5,7,3,9,0,1],[2,7,9,3,8,0,6,4,1,5],[7,0,4,6,9,1,3,2,5,8]],c=0,r=n.split("").reverse();
+  for(var i=0;i<r.length;i++)c=d[c][p[i%8][+r[i]]];
+  return c===0;
+}
+var f=document.getElementById("f"),m=document.getElementById("msg");
+var $=function(id){return document.getElementById(id)};
+
+/* ===== सेटिंग: Google Apps Script URL इथे टाका (फाईलच्या शेवटी सूचना) ===== */
+/* ===== छत्रपती शिवाजी महाराजांचा फोटो: फाईल वेबसाईटच्या फोल्डरमध्ये ठेवून तिचे नाव इथे लिहा ===== */
+var PORTRAIT="";   // उदा. "shivaji.jpg" किंवा "images/shivaji.webp"
+(function(){
+  if(!PORTRAIT)return;
+  var im=document.getElementById("rajaImg"),fb=document.getElementById("flagFb");
+  im.onload=function(){im.hidden=false;fb.style.display="none"};
+  im.onerror=function(){im.hidden=true};
+  im.src=PORTRAIT;
+})();
+var ENDPOINT="https://script.google.com/macros/s/AKfycbxj0BUkp2GLzFKMo1MVTxSBxTe8L5co6MKSsisxHEg6vpxzH-0hiyo5Sea3e48fFXMuog/exec";   // उदा. "https://script.google.com/macros/s/XXXX/exec"
+var GOAL=10000;
+
+if(ENDPOINT){
+  $("join-note").textContent="प्रस्तावित उपक्रमांबद्दल माहिती हवी असल्यास फॉर्म भरा. यात पैसे द्यायचे नाहीत. तुमचे नाव, जिल्हा, मोबाईल आणि मत फक्त उपक्रमाच्या संपर्कासाठी जमा केले जाईल; आधार नंबर पाठवला जात नाही.";
+  m.textContent="तुमची माहिती फक्त या उपक्रमाच्या संपर्कासाठी वापरली जाईल.";
+} else {
+  $("join-note").textContent="प्रस्तावित उपक्रमांबद्दल माहिती हवी असल्यास फॉर्म भरा. यात पैसे द्यायचे नाहीत. हा फॉर्म सध्या डेमो आहे; माहिती कोणत्याही सर्व्हरवर पाठवली जात नाही.";
+}
+
+/* कॅल्क्युलेटर */
+function fmtPeople(n){
+  if(n>=10000000){return (Math.round(n/10000000*100)/100)+" कोटी"}
+  return (n/100000)+" लाख";
+}
+function fmtAmt(n){return "₹"+(n*500/10000000).toLocaleString("en-IN",{maximumFractionDigits:2})+" कोटी"}
+var sl=$("calc-n");
+function calc(){$("calc-ppl").textContent=fmtPeople(+sl.value);$("calc-amt").textContent=fmtAmt(+sl.value)}
+sl.addEventListener("input",calc);calc();
+
+/* अंदाजपत्रक */
+[["शिक्षण व विद्यार्थी विकास",300],["रोजगार व कौशल्यविकास",250],["उद्योजकता व लघुउद्योग",300],["ग्रामीण व स्थानिक विकास",350],["आरोग्य व सामाजिक कल्याण",150],["तंत्रज्ञान व डिजिटल प्लॅटफॉर्म",50],["जिल्हास्तरीय प्रकल्प व समन्वय",100],["प्रशासन व कर्मचारी",50],["स्वतंत्र लेखापरीक्षण व पारदर्शकता",20],["भविष्यातील प्रकल्पांसाठी राखीव निधी",230]].forEach(function(r){
+  var li=document.createElement("li");
+  li.innerHTML='<div><span>'+r[0]+'</span><b>₹'+r[1].toLocaleString("en-IN")+' कोटी</b></div><div class="bar"><i style="width:'+(r[1]/350*100)+'%"></i></div>';
+  $("alloc").appendChild(li);
+});
+
+/* काउंटर */
+var KEY="swe_counts_v1",stats={total:0,support:0,aware:0,interest:0,one:0};
+function paint(){
+  ["total","support","aware","interest","one"].forEach(function(k){
+    var id=k==="one"?"c-one":"c-"+k; $(id).textContent=(+stats[k]||0).toLocaleString("en-IN");
+  });
+  var p=Math.min(100,stats.total/GOAL*100);
+  $("c-bar").style.width=p+"%";$("c-goal").textContent=(Math.round(p*10)/10)+"%";
+}
+if(ENDPOINT){
+  fetch(ENDPOINT).then(function(r){return r.json()}).then(function(j){
+    ["total","support","aware","interest","one"].forEach(function(k){stats[k]=+j[k]||0});paint();
+  }).catch(function(){paint()});
+}else{
+  try{var sv=JSON.parse(localStorage.getItem(KEY));if(sv)stats=sv}catch(e){}
+  paint();
+}
+
+/* फॉर्म */
+function say(t,c){m.textContent=t;m.className=c||""}
+f.addEventListener("submit",function(e){
+  e.preventDefault();
+  if($("website").value)return;
+  if(!f.reportValidity())return;
+  var a=$("aadhaar").value.trim();
+  if(a&&!validAadhaar(a)){say("आधार नंबर चुकीचा आहे. कृपया 12 अंकी योग्य नंबर टाका किंवा हे क्षेत्र रिकामे ठेवा.","err");$("aadhaar").focus();return;}
+  try{if(localStorage.getItem("swe_done")==="1"){say("तुमची नोंदणी आधीच झाली आहे. धन्यवाद!","done");return;}}catch(x){}
+
+  /* आधार नंबर जाणीवपूर्वक पाठवला जात नाही */
+  var d={time:new Date().toISOString(),name:$("name").value.trim(),district:$("district").value,phone:$("phone").value,business:$("business").value.trim(),
+    topic:$("interest").value,note:$("msg2").value.trim(),
+    support:$("o-support").checked,aware:$("o-aware").checked,interest:$("o-interest").checked,one:$("o-one").checked};
+  var btn=f.querySelector("button[type=submit]");btn.disabled=true;
+
+  function ok(){
+    stats.total++;["support","aware","interest","one"].forEach(function(k){if(d[k])stats[k]++});
+    try{if(!ENDPOINT)localStorage.setItem(KEY,JSON.stringify(stats));localStorage.setItem("swe_done","1")}catch(x){}
+    paint();f.reset();btn.disabled=false;
+    say(ENDPOINT?"धन्यवाद! तुमचा सहभाग नोंदवला गेला आहे.":"धन्यवाद! (डेमो: ही नोंद फक्त या ब्राउझरमध्ये मोजली गेली आहे.)","done");
+  }
+  if(ENDPOINT){
+    fetch(ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(d)})
+      .then(ok).catch(function(){btn.disabled=false;say("नोंदणी झाली नाही. कृपया पुन्हा प्रयत्न करा.","err")});
+  }else ok();
+});
+
+/* पदाधिकारी अर्ज */
+var APPLY_ENDPOINT="https://script.google.com/macros/s/AKfycbxj0BUkp2GLzFKMo1MVTxSBxTe8L5co6MKSsisxHEg6vpxzH-0hiyo5Sea3e48fFXMuog/exec";   /* स्वतंत्र Google Apps Script URL; वरील सहभाग फॉर्मपेक्षा वेगळी Sheet वापरा */
+var af=document.getElementById("af"),am=document.getElementById("amsg");
+function asay(t,c){am.textContent=t;am.className=c||""}
+if(APPLY_ENDPOINT)am.textContent="तुमची माहिती फक्त अर्जाच्या छाननीसाठी वापरली जाईल.";
+af.addEventListener("submit",function(e){
+  e.preventDefault();
+  if(document.getElementById("a-website").value)return;
+  if(!af.reportValidity())return;
+  var g=function(id){return document.getElementById(id).value.trim()};
+  var d={type:"office_application",time:new Date().toISOString(),name:g("a-name"),phone:g("a-phone"),email:g("a-email"),age:g("a-age"),
+    district:g("a-district"),taluka:g("a-taluka"),village:g("a-village"),education:g("a-edu"),experience:g("a-exp"),
+    post:g("a-post"),skills:g("a-skills"),reason:g("a-reason")};
+  var b=af.querySelector("button[type=submit]");b.disabled=true;
+  function done(){af.reset();b.disabled=false;asay(APPLY_ENDPOINT?"धन्यवाद! तुमचा अर्ज प्राप्त झाला आहे. छाननीनंतर संपर्क केला जाईल.":"डेमो: अर्ज फक्त तपासणीसाठी स्वीकारला; कोठेही साठवला गेला नाही.","done")}
+  if(APPLY_ENDPOINT){
+    fetch(APPLY_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(d)})
+      .then(done).catch(function(){b.disabled=false;asay("अर्ज पाठवता आला नाही. कृपया पुन्हा प्रयत्न करा.","err")});
+  }else done();
+});
+
+/*
+===== सर्वांना दिसणारी खरी मोजणी चालू करण्यासाठी: Google Sheet + Apps Script =====
+1. नवीन Google Sheet बनवा. Row 1 मध्ये हेडर:
+   time | name | district | phone | business | topic | note | support | aware | interest | one
+2. Extensions > Apps Script मध्ये हा कोड पेस्ट करा:
+
+function doPost(e){
+  var s=SpreadsheetApp.getActiveSheet(), d=JSON.parse(e.postData.contents);
+  s.appendRow([d.time,d.name,d.district,d.phone,d.business,d.topic,d.note,d.support,d.aware,d.interest,d.one]);
+  return ContentService.createTextOutput("ok");
+}
+function doGet(){
+  var v=SpreadsheetApp.getActiveSheet().getDataRange().getValues().slice(1);
+  var c={total:v.length,support:0,aware:0,interest:0,one:0};
+  v.forEach(function(r){ if(r[7]===true)c.support++; if(r[8]===true)c.aware++; if(r[9]===true)c.interest++; if(r[10]===true)c.one++; });
+  return ContentService.createTextOutput(JSON.stringify(c)).setMimeType(ContentService.MimeType.JSON);
+}
+
+3. Deploy > New deployment > Web app > Execute as: Me, Who has access: Anyone.
+4. मिळालेली URL वरील ENDPOINT मध्ये टाका.
+*/
+</script>
+</body>
+</html>
